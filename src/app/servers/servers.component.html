@@ -73,7 +73,18 @@
 
 <hr>
 
-<p>{{ serverCreationStatus }}</p>
+<!--
+    <p>{{ serverCreationStatus }}</p>
+-->
+
+<!--
+    Structural directives (directives that change the structure of the DOM), are prefixed with *.
+    The directive itself is simply "ngIf". Its selector takes the attribute form:
+        selecetor: '[ngIf]'
+    
+    Most directives take this form (attribute selector).
+-->
+<p *ngIf="serverCreated">Server was created. Server name: {{ serverName }}</p>
 
 <p [innerText]="allowNewServer"></p>
 <app-server></app-server>
