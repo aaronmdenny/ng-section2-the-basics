@@ -83,8 +83,17 @@
         selecetor: '[ngIf]'
     
     Most directives take this form (attribute selector).
+
+    # is a local reference. It establishes a reference to the tag that contains it. This reference can be used elsewhere.
+    ng-template is a component that ships with Angular that you can use to mark places in the DOM. We are using it to mark
+    an area that we want to show conditionally.
 -->
-<p *ngIf="serverCreated">Server was created. Server name: {{ serverName }}</p>
+<p *ngIf="serverCreated; else noServer">Server was created. Server name: {{ serverName }}</p>
+<ng-template #noServer>
+    <p>
+        No Server was created!
+    </p>
+</ng-template>
 
 <p [innerText]="allowNewServer"></p>
 <app-server></app-server>
