@@ -12,6 +12,25 @@
     class="form-control"
     (input)="onUpdateServerName($event)">
 <p>{{ serverName }}</p>
+
+<hr>
+
+<!--
+    With two-way data binding, we combine event binding with property binding. Here, we use the ngModel directive.
+    
+    With this setup, it will trigger on the input event, like the input above, updating the value of 'otherServerName'
+    in the component automatically. Since this is two-way data binding, the value of the input element can be set from 
+    the component as well, as it is initialized with 'TestServer'.
+-->
+<label>Other Server Name</label>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="otherServerName">
+<p>{{ otherServerName }}</p>
+
+<hr>
+
 <!--
     In Angular, square brackets [] indicate that we are using property binding. We want to dynamically bind some property.
     disabled is an HTML attribute, which, in normal HTML, only sets a specific property on the underlying DOM element.
