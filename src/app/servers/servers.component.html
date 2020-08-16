@@ -12,9 +12,21 @@
 
     You can also bind to properties of directives, as well as your own components (covered later).
 -->
+<!--
+    Typically, you have the onClick HTML attribute that you can use to execute some Javascript code. Angular offers us the 
+    event-binding syntax:
+        (click)="<someTypeScriptCode>"
+    
+    You can bind to any event made available by the HTML attribute you are placing this syntax on, e.g., onClick, onMouseEnter,
+    etc. without the "on" at the beginning.
+
+    Normally, you will put some method from the .ts file between the quotation marks, but you can also enter the code you 
+    want to execute when the event happens. Only do this if it doesn't become too long.
+-->
 <button
     class="btn btn-primary"
-    [disabled]="!allowNewServer">
+    [disabled]="!allowNewServer"
+    (click)="onCreateServer()">
     Add Server
 </button>
 <!--
@@ -25,6 +37,11 @@
     property of an HTML element, directive, or component, use property binding.
 -->
 <p>{{ allowNewServer }}</p>
+
+<hr>
+
+<p>{{ serverCreationStatus }}</p>
+
 <p [innerText]="allowNewServer"></p>
 <app-server></app-server>
 <app-server></app-server>
