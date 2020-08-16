@@ -1,4 +1,18 @@
 <!--
+    The "input" event is fired whenever the user types into an input. It gets fired on every keystroke.
+
+    $event is a reserved variable name you can use in the template when using event binding. It contains the data emitted
+    with the event. So, (input) and (click) are events provided by the DOM, and they emit some data when they are fired.
+
+    By passing $event as the argument to the method in the model, we can use the data.
+-->
+<label>Server Name</label>
+<input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)">
+<p>{{ serverName }}</p>
+<!--
     In Angular, square brackets [] indicate that we are using property binding. We want to dynamically bind some property.
     disabled is an HTML attribute, which, in normal HTML, only sets a specific property on the underlying DOM element.
 

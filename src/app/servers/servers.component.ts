@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
+  serverName = '';
 
   constructor() {
     setTimeout(() => {
@@ -22,4 +23,16 @@ export class ServersComponent implements OnInit {
     this.serverCreationStatus = 'Server was created!';
   }
 
+  /**
+   * The event object has a property named "target". This is the HTML element on which the 
+   * event occurred. Since this element is an input element, it has a value property. This 
+   * value property is what the user has entered into the input element at the time of the 
+   * event.
+   * 
+   * We explicitly cast the target property so the IDE is satisfied.
+   */
+  onUpdateServerName(event: Event) {
+    console.log(event);
+    this.serverName = (<HTMLInputElement>event.target).value;
+  }
 }
