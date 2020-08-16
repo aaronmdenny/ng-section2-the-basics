@@ -17,5 +17,14 @@
     [disabled]="!allowNewServer">
     Add Server
 </button>
+<!--
+    Below, we can either use property binding or string interpolation to achieve the same goal, outputting the value of the 
+    boolean variable 'allowNewServer'. The 'innerText' property is a DOM property of the 'p' HTML element.
+
+    General rule: If you want to output something in your template, use string interpolation. If you want to change some 
+    property of an HTML element, directive, or component, use property binding.
+-->
+<p>{{ allowNewServer }}</p>
+<p [innerText]="allowNewServer"></p>
 <app-server></app-server>
 <app-server></app-server>
