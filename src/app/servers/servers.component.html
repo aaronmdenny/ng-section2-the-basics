@@ -1,2 +1,21 @@
+<!--
+    In Angular, square brackets [] indicate that we are using property binding. We want to dynamically bind some property.
+    disabled is an HTML attribute, which, in normal HTML, only sets a specific property on the underlying DOM element.
+
+    Each HTML element we use gets parsed by the browser and gets translated to an element on the DOM. Therefore, we have an
+    element on the DOM, and this element has some properties. Many of these cannot be set via attributes on an HTML element.
+    One of these properties is the disabled property. You can set it though the 'disabled' attribute, but here, we are not
+    using the disabled attribute. We are instead directly binding to the native 'disabled' property.
+
+    For the 'disabled' property, we assign it a typescript expression that resolves to a boolean. For other properties, a
+    different type may be requried.
+
+    You can also bind to properties of directives, as well as your own components (covered later).
+-->
+<button
+    class="btn btn-primary"
+    [disabled]="!allowNewServer">
+    Add Server
+</button>
 <app-server></app-server>
 <app-server></app-server>
