@@ -6,4 +6,31 @@
 
     The serverId variable is of type number, but it can be converted to a string.
 -->
-<p>{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<!--
+    Directives that do not modify the structure of the DOM are attribute directives. These directives do not have 
+    the * prefixed on them.
+
+    "ngStyle" is a built-in directive that requires some configuration.
+
+    We use property binding on the ngStyle directive to configure it.
+
+    The square brackets around ngStyle are not part of its name. The name of the directive is simply ngStyle.
+
+    The square brackets indicate that we want to bind to some property on this directive. This property's name is
+    also ngStyle.
+
+        selector: '[ngStyle]'
+        
+        ...
+        ngStyle = { <some object with settings> }
+    
+    So, what we are doing here is binding to the property of the ngStyle directive that is also named ngStyle.
+
+    The config object can take the form:
+        { 'background-color': 'red' }
+    or:
+        { backGroundColor: 'red' }
+
+    Since this is typescript inside of the double-quotation marks, we can call a method, as we do below.
+-->
+<p [ngStyle]="{ backgroundColor: getColor() }">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
