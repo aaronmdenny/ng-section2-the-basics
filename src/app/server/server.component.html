@@ -10,7 +10,8 @@
     Directives that do not modify the structure of the DOM are attribute directives. These directives do not have 
     the * prefixed on them.
 
-    "ngStyle" is a built-in directive that requires some configuration.
+    "ngStyle" is a built-in directive that requires some configuration. It allows us to dynamically change CSS
+    styles.
 
     We use property binding on the ngStyle directive to configure it.
 
@@ -33,4 +34,29 @@
 
     Since this is typescript inside of the double-quotation marks, we can call a method, as we do below.
 -->
-<p [ngStyle]="{ backgroundColor: getColor() }">{{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}</p>
+<!--
+    ngClass allows us to dynamically add/remove CSS classes.
+
+    It also works as intended by using property binding. There is a property within the directive that has the same
+    name as the selector.
+
+    ngClass configuration also occurs with a Javascript object's key-value pairs.
+
+    The keys are the CSS class names.
+
+    The values are the conditions that determine whether the class should be applied or not.
+
+    Format:
+        { className: <condition> }
+    or:
+        { 'class-name': <condition> }
+    
+    If the class name is not camelcase, as with "class-name", surround it with single quotes to make it a valid key.
+
+    You can outsource the condition to a method and call that method in the value.
+-->
+<p
+    [ngStyle]="{ backgroundColor: getColor() }"
+    [ngClass]="{ online: serverStatus === 'online' }">
+    {{ 'Server' }} with ID {{ serverId }} is {{ getServerStatus() }}
+</p>
