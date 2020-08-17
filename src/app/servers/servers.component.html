@@ -104,5 +104,10 @@
 
     Individual elements within the array are assigned to the temporary variable (server), allowing us to access it. We do
     not need to do so here.
+
+    You can extract the index of the current index with:
+        let <variableName> = index
+
+    The index may be useful, depending on the situation.
 -->
-<app-server *ngFor="let server of servers"></app-server>
+<app-server *ngFor="let server of servers; let i = index"></app-server>
