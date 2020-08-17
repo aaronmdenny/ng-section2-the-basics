@@ -96,5 +96,13 @@
 </ng-template>
 
 <p [innerText]="allowNewServer"></p>
-<app-server></app-server>
-<app-server></app-server>
+
+<!--
+    ngIf is a structural directive (uses * prefix) that iterates through a list of objects, placing elements  on the DOM.
+
+    We define a temporary variable (server) that iterates through the list (servers; defined in .ts file).
+
+    Individual elements within the array are assigned to the temporary variable (server), allowing us to access it. We do
+    not need to do so here.
+-->
+<app-server *ngFor="let server of servers"></app-server>
