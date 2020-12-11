@@ -37,8 +37,8 @@
 
     Each HTML element we use gets parsed by the browser and gets translated to an element on the DOM. Therefore, we have an
     element on the DOM, and this element has some properties. Many of these cannot be set via attributes on an HTML element.
-    One of these properties is the disabled property. You can set it though the 'disabled' attribute, but here, we are not
-    using the disabled attribute. We are instead directly binding to the native 'disabled' property.
+    One of these properties (which can be set) is the disabled property. You can set it though the 'disabled' attribute,
+    but here, we are not using the disabled attribute. We are instead directly binding to the native 'disabled' property.
 
     For the 'disabled' property, we assign it a typescript expression that resolves to a boolean. For other properties, a
     different type may be requried.
@@ -98,7 +98,7 @@
 <p [innerText]="allowNewServer"></p>
 
 <!--
-    ngIf is a structural directive (uses * prefix) that iterates through a list of objects, placing elements  on the DOM.
+    ngFor is a structural directive (uses * prefix) that iterates through a list of objects, placing elements on the DOM.
 
     We define a temporary variable (server) that iterates through the list (servers; defined in .ts file).
 
